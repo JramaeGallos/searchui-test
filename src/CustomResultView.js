@@ -18,8 +18,9 @@ const CustomResultView = ({ result }) => (
     {result.booktitle && <p><strong>Book Title:</strong> {result.booktitle.raw}</p>}
     {result.conferencename && <p><strong>Conference Name:</strong> {result.conferencename.raw}</p>}
     {result.conferencedate && <p><strong>Conference Date:</strong> {result.conferencedate.raw}</p>}
+ 
 
-    {result.url && (
+    {result.url != null  ? ( result.url.raw != null ? (
       <div className="view-ecopy-button">
         <a href={result.url.raw}>
           <button>
@@ -28,7 +29,9 @@ const CustomResultView = ({ result }) => (
           </button>
         </a>
       </div>
-    )}
+    ) : (<div></div>)) : (<div></div>)}
+
+    
     <div class="clear"></div>
 
   </div>
