@@ -1,0 +1,33 @@
+.result-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;  }
+  
+  .view-ecopy-button {
+    float: right;
+  }
+  
+  .view-ecopy-button button {
+    background-color: #8c1515;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .view-ecopy-button button:hover {
+    background-color: #a31f1f;
+  }
+
+  .eye-icon {
+    margin-right: 8px;
+    font-size: 1.2 rem;
+  }
+
+  
+
+  .clear { clear:both; }
+
+  

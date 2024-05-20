@@ -1,5 +1,5 @@
-import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import React from "react";
+import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import {
   ErrorBoundary,
   Facet,
@@ -13,12 +13,11 @@ import {
 } from "@elastic/react-search-ui";
 import {
   BooleanFacet,
-  Layout,
-  SingleLinksFacet,
-  SingleSelectFacet
+  Layout
 } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import { SearchDriverOptions } from "@elastic/search-ui";
+import CustomResultView from "./CustomResultView";
 
 const connector = new AppSearchAPIConnector({
   searchKey: "search-ca3hakxq68dfhj5ibnwboutd",
@@ -34,15 +33,15 @@ const config: SearchDriverOptions = {
     result_fields: {
       title: { raw: {} },
       authors: { raw: {} },
-      publicationcategory: { raw: {}},
+      publicationcategory: { raw: {} },
       publicationyear: { raw: {} },
       keywords: { raw: {} },
-      isecopyavailable: { raw : {} },
-      doi: { raw: {}},
-      url: { raw: {}},
-      booktitle: { raw: {}},
-      conferencename: {raw: {}},
-      conferencedate: {raw: {}}
+      isecopyavailable: { raw: {} },
+      doi: { raw: {} },
+      url: { raw: {} },
+      booktitle: { raw: {} },
+      conferencename: { raw: {} },
+      conferencedate: { raw: {} }
     },
     search_fields: {
       title: {},
@@ -53,10 +52,10 @@ const config: SearchDriverOptions = {
     },
     disjunctiveFacets: ["publicationyear"],
     facets: {
-     publicationcategory: { type: "value", size: 20},
-     publicationyear: {type: "value", size: 20},
-     keywords: {type: "value"},
-     isecopyavailable: {type: "value"}
+      publicationcategory: { type: "value", size: 20 },
+      publicationyear: { type: "value", size: 20 },
+      keywords: { type: "value" },
+      isecopyavailable: { type: "value" }
     }
   }
 };
@@ -102,9 +101,9 @@ export default function App() {
                   bodyContent={
                     <Results
                       titleField="title"
-                      urlField="nps_link"
-                      thumbnailField="image_url"
+                      urlField="url"
                       shouldTrackClickThrough
+                      resultView={CustomResultView}
                     />
                   }
                   bodyHeader={
