@@ -9,8 +9,9 @@ const CustomResultView = ({ result }) => (
     </h3>
     <p><strong>Authors:</strong> {result.authors.raw.join(', ')}</p>
     <p><strong>Category:</strong> {result.publicationcategory.raw}</p>
-    <p><strong>Year:</strong> {result.publicationyear.raw}</p>
-    <p><strong>Keywords:</strong> {Array.isArray(result.keywords.raw) ? result.keywords.raw.join(', ') : result.keywords.raw}</p>
+    {result.publicationyear.raw != null? (
+        <p><strong>Year:</strong> {result.publicationyear.raw}</p>
+      ) : (<div></div>)}    <p><strong>Keywords:</strong> {Array.isArray(result.keywords.raw) ? result.keywords.raw.join(', ') : result.keywords.raw}</p>
     {/* <p><strong>E Copy Available:</strong> {result.isecopyavailable.raw ? 'Yes' : 'No'}</p> */}
     {result.doi && result.doi.raw && result.doi.raw.trim() !== '' && (
       <p><strong>DOI:</strong> <a href={`https://doi.org/${result.doi.raw}`}>{result.doi.raw}</a></p>
@@ -18,9 +19,9 @@ const CustomResultView = ({ result }) => (
     {result.booktitle && <p><strong>Book Title:</strong> {result.booktitle.raw}</p>}
     {result.conferencename && <p><strong>Conference Name:</strong> {result.conferencename.raw}</p>}
     {result.conferencedate && <p><strong>Conference Date:</strong> {result.conferencedate.raw}</p>}
- 
 
-    {result.url != null  ? ( result.url.raw != null ? (
+
+    {result.url != null ? (result.url.raw != null ? (
       <div className="view-ecopy-button">
         <a href={result.url.raw}>
           <button>
@@ -31,7 +32,7 @@ const CustomResultView = ({ result }) => (
       </div>
     ) : (<div></div>)) : (<div></div>)}
 
-    
+
     <div class="clear"></div>
 
   </div>
