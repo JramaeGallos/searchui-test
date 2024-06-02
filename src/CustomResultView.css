@@ -1,44 +1,56 @@
 .result-box {
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;  }
-  
-  .view-ecopy-button {
-    float: right;
-  }
-  
-  .view-ecopy-button button {
-    background-color: #8b0000;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .view-ecopy-button button:hover {
-    background-color: #a31f1f;
-  }
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
+}
 
-  .eye-icon {
-    margin-right: 8px;
-    font-size: 1.2 rem;
-  }
+.view-ecopy-button {
+  float: right;
+}
 
-  .clear { clear:both; }
-  .back-button {
-    background-color: #8c1515;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  .back-button:hover {
-    background-color: #6d1111;
-  }
-  
-  
+.view-ecopy-button button {
+  background-color: #8b0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.view-ecopy-button button:hover {
+  background-color: #a31f1f;
+}
+
+.eye-icon {
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.clear {
+  clear: both;
+}
+
+.back-button {
+  border: none;
+  background: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-left: 5px;
+  color: #8b0000
+
+}
+.back-button:hover {
+  border: none;
+  background: none;
+}
+
+.back-icon {
+  margin-right: 8px;
+  font-size: 13px;
+  color: #8b0000;
+}

@@ -49,7 +49,7 @@ const config: SearchDriverOptions = {
       volume: { raw: {} },
       issue: { raw: {} },
       pages: { raw: {} },
-      
+
     },
     search_fields: {
       title: {},
@@ -86,7 +86,8 @@ export default function App() {
                     <div className="App">
                       <ErrorBoundary>
                         <Layout
-                          header={<SearchBox searchAsYouType={true} debounceLength={300} />}
+                          header={<SearchBox autocompleteSuggestions={true}
+                            debounceLength={300} />}
                           sideContent={<div>
                             <Facet
                               field="publicationcategory"

@@ -30,6 +30,12 @@ const CustomResultView = ({ result }) => {
       {result.booktitle && <p><strong>Book Title:</strong> {result.booktitle.raw}</p>}
       {result.conferencename && <p><strong>Conference Name:</strong> {result.conferencename.raw}</p>}
       {result.conferencedate && <p><strong>Conference Date:</strong> {result.conferencedate.raw}</p>}
+      {result.journalname && <p><strong>Journal Name:</strong> {result.journalname.raw}</p>}
+      {result.volume && <p><strong>Volume:</strong> {result.volume.raw}</p>}
+      {result.issue && <p><strong>Issue:</strong> {result.issue.raw}</p>}
+      {result.pages && <p><strong>Pages:</strong> {result.pages.raw}</p>}
+
+
       {result.url != null ? (result.url.raw != null ? (
         <div className="view-ecopy-button">
           <a href={result.url.raw} onClick={(e) => e.stopPropagation()}>
