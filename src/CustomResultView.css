@@ -26,8 +26,19 @@
     font-size: 1.2 rem;
   }
 
-  
-
   .clear { clear:both; }
-
+  .back-button {
+    background-color: #8c1515;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .back-button:hover {
+    background-color: #6d1111;
+  }
+  
   
