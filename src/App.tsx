@@ -43,7 +43,13 @@ const config: SearchDriverOptions = {
       url: { raw: {} },
       booktitle: { raw: {} },
       conferencename: { raw: {} },
-      conferencedate: { raw: {} }
+      conferencedate: { raw: {} },
+      publisher: { raw: {} },
+      journalname: { raw: {} },
+      volume: { raw: {} },
+      issue: { raw: {} },
+      pages: { raw: {} },
+      
     },
     search_fields: {
       title: {},
