@@ -15,14 +15,15 @@ import {
   BooleanFacet,
   Layout
 } from "@elastic/react-search-ui-views";
-import "@elastic/react-search-ui-views/lib/styles/styles.css";
+// import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import { SearchDriverOptions } from "@elastic/search-ui";
 import CustomResultView from "./CustomResultView";
+import "./CustomElasticSearchStyles.css";
 
 const connector = new AppSearchAPIConnector({
-  searchKey: "search-ca3hakxq68dfhj5ibnwboutd",
-  engineName: "test",
-  endpointBase: "https://cmsc191.ent.asia-southeast1.gcp.elastic-cloud.com"
+  searchKey: "search-fxmnanq2upcgnriv23n2qh2q",
+  engineName: "cmsc191",
+  endpointBase: "https://cmsc191-kms.ent.asia-southeast1.gcp.elastic-cloud.com"
 });
 
 const config: SearchDriverOptions = {
