@@ -14,7 +14,7 @@ const CustomResultView = ({ result }) => {
   };
   return (
     <div className="result-box" onClick={handleResultClick}>
-      <h3 style={{ color: '#8c1515' }}  onClick={handleResultClick} onMouseEnter={handleTitleHover}>
+      <h3 style={{ color: '#8c1515' }} onMouseEnter={handleTitleHover}>
         {result.title.raw}
         
       </h3>
