@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
+import { Sorting } from "@elastic/react-search-ui";
 import {
   ErrorBoundary,
   Facet,
@@ -20,6 +21,10 @@ import { SearchDriverOptions } from "@elastic/search-ui";
 import CustomResultView from "./CustomResultView";
 import "./CustomElasticSearchStyles.css";
 import ResultDetail from "./ResultDetail";
+
+import {
+  buildSortOptionsFromConfig,
+} from "./config/config-helper";
 
 const connector = new AppSearchAPIConnector({
   searchKey: "search-fxmnanq2upcgnriv23n2qh2q",
@@ -88,7 +93,7 @@ export default function App() {
                         <Layout
                           header={
                             <div className="header-wrapper">
-                              <div className="app-name">Application Name</div>
+                              <div className="app-name">ICS PubDB</div>
                               <div className="search-box-container">
                                 <SearchBox
                                   className="search-box"
@@ -100,6 +105,12 @@ export default function App() {
                           }
                           sideContent={
                             <div>
+                              {wasSearched && (
+                                <Sorting
+                                  label={"Sort by"}
+                                  sortOptions={buildSortOptionsFromConfig()}
+                                />
+                              )}  
                               <Facet
                                 field="publicationcategory"
                                 label="Publication Category"

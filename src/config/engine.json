@@ -1,0 +1,42 @@
+{
+  "engineName": "cmsc191",
+  "endpointBase": "https://cmsc191-kms.ent.asia-southeast1.gcp.elastic-cloud.com",
+  "searchKey": "search-fxmnanq2upcgnriv23n2qh2q",
+  "resultFields": [
+    "isecopyavailable",
+    "keywords",
+    "conferencedate",
+    "issue",
+    "chapters",
+    "title",
+    "journalname",
+    "url",
+    "publicationdate",
+    "volume",
+    "pages",
+    "issn",
+    "publicationcategory",
+    "conferencename",
+    "publicationyear",
+    "publisher",
+    "booktitle",
+    "authors",
+    "doi",
+    "id"
+  ],
+  "sortFields": [
+    "conferencedate",
+    "publicationdate",
+    "title",
+    "publicationyear"
+  ],
+  "facets": [
+    "isecopyavailable",
+    "publicationdate",
+    "publicationyear",
+    "keywords",
+    "conferencedate"
+  ],
+  "titleField": "title",
+  "urlField": "url"
+}
