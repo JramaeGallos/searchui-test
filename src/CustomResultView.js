@@ -23,7 +23,6 @@ const CustomResultView = ({ result }) => {
       {result.publicationyear.raw != null ? (
         <p><strong>Year:</strong> {result.publicationyear.raw}</p>
       ) : (<div></div>)}
-      <p><strong>Keywords:</strong> {Array.isArray(result.keywords.raw) ? result.keywords.raw.join(', ') : result.keywords.raw}</p>
       {result.doi && result.doi.raw && result.doi.raw.trim() !== '' && (
         <p><strong>DOI:</strong> <a href={`https://doi.org/${result.doi.raw}`}>{result.doi.raw}</a></p>
       )}
@@ -34,6 +33,7 @@ const CustomResultView = ({ result }) => {
       {result.volume && <p><strong>Volume:</strong> {result.volume.raw}</p>}
       {result.issue && <p><strong>Issue:</strong> {result.issue.raw}</p>}
       {result.pages && <p><strong>Pages:</strong> {result.pages.raw}</p>}
+      <p><strong>Keywords:</strong> {Array.isArray(result.keywords.raw) ? result.keywords.raw.join(', ') : result.keywords.raw}</p>
 
 
       {result.url != null ? (result.url.raw != null ? (
