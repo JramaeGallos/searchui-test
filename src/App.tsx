@@ -49,7 +49,6 @@ const config: SearchDriverOptions = {
       volume: { raw: {} },
       issue: { raw: {} },
       pages: { raw: {} },
-
     },
     search_fields: {
       title: {},
@@ -77,48 +76,71 @@ export default function App() {
           element={
             <SearchProvider config={config}>
               <WithSearch
-                mapContextToProps={({ wasSearched }) => ({
-                  wasSearched
+                mapContextToProps={({ wasSearched, results }) => ({
+                  wasSearched,
+                  results
                 })}
               >
-                {({ wasSearched }) => {
+                {({ wasSearched, results }) => {
                   return (
                     <div className="App">
                       <ErrorBoundary>
                         <Layout
-                          header={<SearchBox autocompleteSuggestions={true}
-                            debounceLength={300} />}
-                          sideContent={<div>
-                            <Facet
-                              field="publicationcategory"
-                              label="Publication Category"
-                              isFilterable={true}
-                            />
-                            <Facet
-                              field="publicationyear"
-                              label="Publication Year"
-                              filterType="any"
-                              isFilterable={true}
-                            />
-                            <Facet
-                              field="isecopyavailable"
-                              label="E Copy Available"
-                              view={BooleanFacet}
-                              isFilterable={true}
-                            />
-                            <Facet
-                              field="keywords"
-                              label="Keywords"
-                              isFilterable={true}
-                            />
-                          </div>}
+                          header={
+                            <div className="header-wrapper">
+                              <div className="app-name">Application Name</div>
+                              <div className="search-box-container">
+                                <SearchBox
+                                  className="search-box"
+                                  autocompleteSuggestions={true}
+                                  debounceLength={300}
+                                />
+                              </div>
+                            </div>
+                          }
+                          sideContent={
+                            <div>
+                              <Facet
+                                field="publicationcategory"
+                                label="Publication Category"
+                                isFilterable={true}
+                              />
+                              <Facet
+                                field="publicationyear"
+                                label="Publication Year"
+                                filterType="any"
+                                isFilterable={true}
+                              />
+                              <Facet
+                                field="isecopyavailable"
+                                label="E Copy Available"
+                                view={BooleanFacet}
+                                isFilterable={true}
+                              />
+                              <Facet
+                                field="keywords"
+                                label="Keywords"
+                                isFilterable={true}
+                              />
+                            </div>
+                          }
                           bodyContent={
-                            <Results
-                              titleField="title"
-                              urlField="url"
-                              shouldTrackClickThrough
-                              resultView={CustomResultView}
-                            />
+                            <div>
+                              {wasSearched && results.length > 0 ? (
+                                <Results
+                                  titleField="title"
+                                  urlField="url"
+                                  shouldTrackClickThrough
+                                  resultView={CustomResultView}
+                                />
+                              ) : (
+                                wasSearched && (
+                                  <div className="no-results">
+                                    <p>No results found.</p>
+                                  </div>
+                                )
+                              )}
+                            </div>
                           }
                           bodyHeader={
                             <React.Fragment>

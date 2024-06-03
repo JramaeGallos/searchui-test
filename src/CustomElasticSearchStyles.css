@@ -29,6 +29,7 @@ html {
   z-index: 1000; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
   padding: 10px 20px;
+  
 }
 
 /**
@@ -901,7 +902,10 @@ html {
   border-radius: 10px;      
   padding: 10px;        
   display: flex;           
-  align-items: center;      
+  align-items: center;
+  widows: 100%;   
+   
+  
 }
 .sui-search-box__submit {
   flex-shrink: 0;
@@ -1114,5 +1118,26 @@ html {
 .sui-select__option:hover {
   background: #f8f8f8;
 }
-
-
+.no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
+.app-name {
+  margin-right: 20px; 
+  font-size: 20px;
+  font-weight: bold;
+  color: #8b0000;
+}
+.header-wrapper {
+  display: flex;
+  align-items: center;
+}
+.search-box-container {
+  flex-grow: 1;
+}
+.no-results p {
+  text-align: center;
+  font-weight: bold;
+}
